@@ -1,0 +1,113 @@
+/* A owns page layout. Food colors and B's visual registry stay independent. */
+:root { --muted: #616161; }
+body::before { opacity: .035; }
+.pantry-toggle, .pantry-done { display: none; }
+.pantry-controls { min-width: 0; }
+.pantry-summary { display: none; }
+.hero { overflow: hidden; }
+.hero-copy { position: relative; z-index: 1; }
+.hero p, .card-body > p, .muted, .ready-note { color: #5e5e5e; }
+.ingredient-preview > span, .card-meta > span { color: #5d5d5d; }
+.ingredient-groups button, .filter-bar button { min-height: 42px; }
+.icon-button { min-width: 40px; min-height: 40px; }
+.favorite { top: 10px; right: 10px; }
+.art-caption { color: #505050; background: #fafaf2ee; padding: 2px 7px; letter-spacing: 1px; font-size: 12px; }
+.card-art { isolation: isolate; }
+.card-art .food-collage { gap: 5px; padding: 26px 25px 32px; background: radial-gradient(ellipse, #f0f0eb, #fafafa 72%); }
+.card-art .food-collage > .food-art { margin: 0; width: 39%; max-width: 120px; }
+.card-art .food-collage > .food-art:nth-child(2) { transform: translateY(12px); }
+.card-art .food-collage > .food-art:nth-child(3) { width: 28%; transform: translateY(-7px); }
+.card-art .food-collage > .food-wordmark { height: auto; min-height: 62px; padding: 7px; }
+.card-art .food-collage > .ingredient-photo { max-width: 48%; max-height: 105px; }
+.recipe-card { display: flex; flex-direction: column; }
+.card-body { flex: 1; }
+.card-actions button { min-height: 46px; }
+.dialog { scrollbar-gutter: stable; }
+.dialog-head { position: sticky; top: -28px; z-index: 3; background: #f8f8f8; }
+.detail-source, .detail-source a { overflow-wrap: anywhere; }
+.material-list > div { font-size: 15px; }
+.material-list > div > span:last-child { font-size: 13px; }
+.detail-intro .food-art { object-fit: contain; }
+#recipe-results { scroll-margin-top: 110px; }
+#recipe-results:focus { outline: none; }
+
+@media (max-width: 800px) {
+  .topbar { height: auto; min-height: 110px; padding: 12px 20px 0; flex-wrap: wrap; gap: 8px 16px; }
+  .topbar .brand { height: 43px; }
+  .topbar .meal-button { margin-left: auto; min-height: 42px; }
+  .topbar nav { display: flex; order: 3; width: 100%; flex-basis: 100%; height: 42px; gap: 24px; margin: 0; justify-content: center; }
+  .topbar nav button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-size: 15px; padding: 0 4px 10px; }
+  .pantry-sidebar { padding: 16px 20px; background: #f8f8f5; }
+  .sidebar-heading { flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+  .sidebar-heading h2 { margin: 0; font-size: 22px; flex: 1; }
+  .sidebar-heading p { display: none; }
+  .pantry-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; padding: 6px 12px; border: 1px solid #aaa; background: #fdfdfb; font-size: 14px; }
+  .pantry-toggle svg { transition: transform .2s; }
+  .pantry-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .pantry-summary { display: block; margin: 7px 0 0; font-size: 13px; color: #626262; line-height: 1.8; }
+  .pantry-controls { display: none; }
+  .pantry-controls.is-open { display: block; padding-top: 15px; }
+  .ingredient-grid { max-height: 265px; overscroll-behavior: contain; }
+  .ingredient-groups { padding-bottom: 5px; }
+  .pantry-done { display: flex; width: 100%; justify-content: center; margin-top: 18px; min-height: 44px; }
+  .app-shell main { padding-top: 18px; }
+  .hero { min-height: 230px; padding: 24px; }
+  .hero h1 { font-size: clamp(28px, 5vw, 38px); margin-top: 14px; white-space: normal; }
+  .hero-copy { max-width: 80%; }
+  .hero p { font-size: 16px; line-height: 1.9; }
+  .selection-strip { align-items: flex-start; }
+  .selected-tags { flex-wrap: wrap; }
+  .selected-tags button { min-height: 38px; }
+  .results-heading { margin-top: 25px; }
+  #recipe-results { scroll-margin-top: 125px; }
+  .filter-bar > div { display: flex; flex-wrap: wrap; gap: 5px; }
+  .filter-bar button { padding: 7px 9px; }
+  .recipe-search input, .ingredient-search input, .category-select select { font-size: 16px; }
+  .recipe-search, .ingredient-search, .category-select select, .view-toggle { min-height: 44px; }
+  .view-toggle button { min-width: 42px; }
+  .dialog { max-width: calc(100vw - 24px); max-height: 88dvh; }
+}
+
+@media (max-width: 480px) {
+  .topbar { padding: 10px 16px 0; gap: 8px; }
+  .topbar .brand { font-size: 21px; }
+  .topbar nav { gap: 28px; }
+  .pantry-sidebar { padding: 13px 16px; }
+  .pantry-summary { font-size: 13px; }
+  .pantry-settings small { font-size: 13px; line-height: 1.8; }
+  .ingredient-grid { max-height: 250px; }
+  .ingredient-tile { font-size: 14px; min-height: 100px; }
+  .app-shell main { padding: 16px 16px 0; }
+  .hero { min-height: 225px; padding: 20px; }
+  .hero-copy { max-width: 100%; }
+  .hero h1 { font-size: 30px; letter-spacing: 1px; }
+  .hero-copy > .eyebrow { font-size: 12px; letter-spacing: 2px; }
+  .hero-illustration { opacity: .2; }
+  .hero-example { min-height: 42px; font-size: 14px; margin-top: 15px; }
+  .results-heading { flex-wrap: wrap; gap: 9px; }
+  .results-heading h2 { font-size: 26px; }
+  .ready-note { max-width: none; text-align: left; font-size: 14px; }
+  .filter-bar { gap: 10px; }
+  .filter-bar > span { font-size: 13px; }
+  .recipe-grid { grid-template-columns: 1fr; gap: 20px; }
+  .card-art { height: 208px; }
+  .dish-illustration { height: 100%; }
+  .card-art .food-collage > .food-art { max-width: 130px; }
+  .card-body { padding: 18px 20px 15px; }
+  .card-title { font-size: 26px; }
+  .card-body > p { font-size: 16px; min-height: 0; margin-bottom: 13px; }
+  .ingredient-preview > span, .card-meta > span { font-size: 13px; }
+  .card-meta .text-button, .match-badge { font-size: 14px; }
+  .card-actions { flex-direction: row; }
+  .card-actions button { flex: 1; padding: 12px 8px; min-height: 48px; }
+  .card-actions button + button { border-top: 0; border-left: 1px solid #ddd; }
+  .card-actions button svg { width: 16px; height: 16px; }
+  .dialog { padding: 20px 16px; }
+  .dialog-head { top: -20px; }
+  .dialog-head h2 { font-size: 26px; }
+  .detail-intro { align-items: flex-start; }
+  .detail-intro p { font-size: 16px; }
+  .detail-actions button { flex: 1; min-height: 46px; }
+  .page-footer { flex-wrap: wrap; gap: 12px; font-size: 14px; }
+  .page-footer .text-button { min-height: 44px; font-size: 14px; }
+}

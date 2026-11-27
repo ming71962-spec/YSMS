@@ -9,6 +9,7 @@ import type { Recipe, Match } from './types';
 import '@xyflow/react/dist/style.css';
 import './style.css';
 import './ink.css';
+import './kitchen-layout.css';
 import { FoodArt } from './FoodArt';
 import visuals from './data/visuals.json';
 
@@ -93,6 +94,15 @@ export default function App() {
   const [detail,setDetail]=useState<string|null>(null); const [modal,setModal]=useState<'pantry'|'meal'|'about'|null>(null);
   const [warning,setWarning]=useState(storageUnavailable); const [category,setCategory]=useState('全部菜品');
   const [notice,setNotice]=useState('');
+  const [pantryOpen,setPantryOpen]=useState(false);
+  const resultsRef=useRef<HTMLDivElement>(null);
+  function finishPicking() {
+    setPantryOpen(false);
+    requestAnimationFrame(()=>{
+      resultsRef.current?.focus({preventScroll:true});
+      resultsRef.current?.scrollIntoView({block:'start'});
+    });
+  }
   useEffect(()=>{const handler=()=>setWarning(true);window.addEventListener('kitchen-storage-error',handler);return()=>window.removeEventListener('kitchen-storage-error',handler);},[]);
   useEffect(()=>{if(!notice)return;const timer=setTimeout(()=>setNotice(''),2600);return()=>clearTimeout(timer);},[notice]);
   const available=useMemo(()=>new Set([...selected,...pantry]),[selected,pantry]);
@@ -109,20 +119,20 @@ export default function App() {
   }
   function explore(id:string) {setFocus({type:'recipe',id});setView('graph');setDetail(null);}
   return <>
-    <header className="topbar"><a className="brand" href="#" onClick={e=>{e.preventDefault();setQuery('');setFilter('all');setView('cards');}}><span className="brand-mark"><CookingPot size={24}/></span><span>食材工坊<small>人间烟火 · 纸上寻味</small></span></a><nav aria-label="主导航"><button className={view==='cards'?'active':''} onClick={()=>setView('cards')}><Utensils size={17}/>发现菜谱</button><button className={view==='graph'?'active':''} onClick={()=>setView('graph')}><Network size={17}/>食材关系图</button></nav><button className="meal-button" onClick={()=>setModal('meal')}><ShoppingBasket size={18}/><span>今日一桌</span><b>{meal.length}</b></button></header>
+    <header className="topbar"><a className="brand" href="#" onClick={e=>{e.preventDefault();setQuery('');setFilter('all');setView('cards');}}><span className="brand-mark"><CookingPot size={24}/></span><span>食材工坊<small>人间烟火 · 纸上寻味</small></span></a><nav aria-label="主导航"><button aria-pressed={view==='cards'} className={view==='cards'?'active':''} onClick={()=>setView('cards')}><Utensils size={17}/>发现菜谱</button><button aria-pressed={view==='graph'} className={view==='graph'?'active':''} onClick={()=>setView('graph')}><Network size={17}/>食材关系图</button></nav><button className="meal-button" onClick={()=>setModal('meal')}><ShoppingBasket size={18}/><span>今日一桌</span><b>{meal.length}</b></button></header>
     {warning&&<div className="storage-warning">浏览器存储不可用或旧记录损坏，本次操作仍可使用，但可能无法保存。</div>}
     <div className="app-shell">
-      <aside className="pantry-sidebar"><div className="sidebar-heading"><span className="eyebrow">厨房 · 从手边开始</span><h2>我的食材 <span>{selected.length}</span></h2><p>看看冰箱里，还有什么好食材。</p></div>
+      <aside className="pantry-sidebar"><div className="sidebar-heading"><span className="eyebrow">厨房 · 从手边开始</span><h2>我的食材 <span>{selected.length}</span></h2><p>看看冰箱里，还有什么好食材。</p><button className="pantry-toggle" aria-expanded={pantryOpen} aria-controls="pantry-controls" onClick={()=>setPantryOpen(!pantryOpen)}>{pantryOpen?"收起食材":"挑选食材"}<ChevronDown size={16}/></button></div><p className="pantry-summary">已选 {selected.length} 种食材 · 常备 {pantry.length} 种调料，展开可调整。</p><div id="pantry-controls" className={`pantry-controls ${pantryOpen?"is-open":""}`}>
         <label className="input-box ingredient-search"><Search size={17}/><input aria-label="搜索食材" placeholder="找食材，例如：鸡蛋" value={ingredientQuery} onChange={e=>setIngredientQuery(e.target.value)}/>{ingredientQuery&&<button aria-label="清除食材搜索" className="icon-button" onClick={()=>setIngredientQuery('')}><X size={14}/></button>}</label>
         <div className="ingredient-groups" aria-label="食材分类">{['常用','蔬菜','蛋奶豆制品','肉类','主食','调料','全部'].map(g=><button key={g} className={group===g?'active':''} onClick={()=>setGroup(g)}>{g==='蛋奶豆制品'?'蛋 / 豆':g}</button>)}</div>
         <div className="ingredient-grid">{shownIngredients.map(i=>{const owned=available.has(i.id);const isPantry=pantry.includes(i.id);return <button key={i.id} className={`ingredient-tile ${owned?'selected':''}`} aria-label={`${isPantry?'常备':owned?'移除':'选择'}${i.name}`} aria-pressed={owned} onClick={()=>{if(isPantry){setModal('pantry');return;}toggle('selected',i.id);}}><FoodArt id={i.id} className="ingredient-art"/><span>{i.name}</span>{owned&&<span className="tile-check"><Check size={11}/></span>}{isPantry&&<small>常备</small>}</button>;})}{!shownIngredients.length&&<p className="empty-small">还没有收录这个食材，试试其他名称。</p>}</div>
         <div className="pantry-settings"><div><span><SlidersHorizontal size={16}/> 常备调料</span><button className="text-button" onClick={()=>setModal('pantry')}>管理</button></div><p>{pantry.map(id=>ingredientMap.get(id)?.name).join('、')||'未设置常备调料'}</p><small>已计入匹配。默认仅含盐和食用油，可自行修改。</small></div>
-        <div className="sidebar-bottom"><Leaf size={17}/><span>从手边食材开始，少一点纠结。</span></div>
+        <button className="primary-button pantry-done" onClick={finishPicking}>选好了，看看能做什么</button></div><div className="sidebar-bottom"><Leaf size={17}/><span>从手边食材开始，少一点纠结。</span></div>
       </aside>
       <main>
         <section className="hero"><div className="hero-copy"><span className="eyebrow"><span className="little-line"/> 一蔬一饭 · 皆有滋味</span><h1>今天，做点什么<span>？</span></h1><p>选好手边的食材，<br className="mobile-break"/>让下一顿饭有个着落。</p><button className="hero-example" onClick={()=>{example();setView('cards');setFilter('all');setQuery('');setCategory('全部菜品');setNotice('已加入西红柿和鸡蛋，试试再选一种食材');}}><FoodArt id="tomato" decorative/><FoodArt id="egg" decorative/>试试「番茄 + 鸡蛋」<Plus size={15}/></button></div><div className="hero-illustration" aria-hidden="true"><FoodArt id="hero" type="scene" decorative/><span className="plate-caption">竹影入窗，一饭清欢</span></div></section>
-        <section className="selection-strip" aria-label="已选食材"><div className="selection-label"><span className="selection-dot"/>手边有 <b>{selected.length}</b> 种</div><div className="selected-tags">{selected.length?selected.map(id=><button key={id} onClick={()=>toggle('selected',id)} aria-label={`移除已选${ingredientMap.get(id)!.name}`}><FoodArt id={id} decorative/> {ingredientMap.get(id)!.name}<X size={13}/></button>):<span className="selection-placeholder">从左侧选择食材，或先逛逛下面的菜谱。</span>}</div>{selected.length>0&&<button className="text-button clear-selection" onClick={()=>clear('selected')}>清空</button>}</section>
-        <div className="results-heading"><div><span className="eyebrow">寻味 · 家常之间</span><h2>{view==='cards'?'你的下一道家常菜':'顺着食材，发现更多'}</h2></div><span className="ready-note"><ChefHat size={18}/>{readyCount>0?`${readyCount} 道菜的必需材料种类已齐全`:'选几样食材，看看能做什么'}</span></div>
+        <section className="selection-strip" aria-label="已选食材"><div className="selection-label"><span className="selection-dot"/>手边有 <b>{selected.length}</b> 种</div><div className="selected-tags">{selected.length?selected.map(id=><button key={id} onClick={()=>toggle('selected',id)} aria-label={`移除已选${ingredientMap.get(id)!.name}`}><FoodArt id={id} decorative/> {ingredientMap.get(id)!.name}<X size={13}/></button>):<span className="selection-placeholder">先挑选手边食材，或逛逛下面的菜谱。</span>}</div>{selected.length>0&&<button className="text-button clear-selection" onClick={()=>clear('selected')}>清空</button>}</section>
+        <div className="results-heading" id="recipe-results" ref={resultsRef} tabIndex={-1}><div><span className="eyebrow">寻味 · 家常之间</span><h2>{view==='cards'?'你的下一道家常菜':'顺着食材，发现更多'}</h2></div><span className="ready-note"><ChefHat size={18}/>{readyCount>0?`${readyCount} 道菜的必需材料种类已齐全`:'选几样食材，看看能做什么'}</span></div>
         <div className="toolbar"><label className="input-box recipe-search"><Search size={18}/><input aria-label="搜索菜谱或食材" placeholder="搜菜名或食材，支持「番茄」这样的别名" value={query} onChange={e=>{setQuery(e.target.value);setView('cards');}}/>{query&&<button aria-label="清除菜谱搜索" className="icon-button" onClick={()=>setQuery('')}><X size={16}/></button>}</label><label className="category-select"><select aria-label="菜品分类" value={category} onChange={e=>{setCategory(e.target.value);setView('cards');}}>{['全部菜品','素菜','荤菜','主食','汤羹'].map(c=><option key={c}>{c}</option>)}</select><ChevronDown size={15}/></label><div className="view-toggle"><button className={view==='cards'?'active':''} aria-label="卡片视图" onClick={()=>setView('cards')}><LayoutGrid size={18}/></button><button className={view==='graph'?'active':''} aria-label="关系图视图" onClick={()=>setView('graph')}><Network size={18}/></button></div></div>
         {view==='cards'?<><div className="filter-bar"><div role="group" aria-label="匹配筛选">{([['all','全部菜谱',recipes.length],['ready','材料齐全',readyCount],['almost','只差一种',ranked.filter(m=>m.status==='almost').length],['favorites','我的收藏',favorites.length]] as const).map(([key,label,count])=><button key={key} className={filter===key?'active':''} aria-pressed={filter===key} onClick={()=>setFilter(key)}>{key==='favorites'&&<Heart size={14}/>} {label}<span>{count}</span></button>)}</div><span>{visible.length} 道菜 · 按材料匹配排序</span></div>
         <div className="recipe-grid">{visible.map(m=><RecipeCard key={m.recipe.id} match={m} open={()=>setDetail(m.recipe.id)} explore={()=>explore(m.recipe.id)}/>)}</div>{!visible.length&&<div className="empty-state"><CookingPot size={42}/><h3>这里暂时还没有合适的菜</h3><p>{filter==='favorites'?'点击菜谱上的爱心，就能收藏在这里。':'试着多选一些材料，或放宽搜索与筛选条件。'}</p><button className="secondary-button" onClick={()=>{setFilter('all');setQuery('');setCategory('全部菜品');}}>查看全部菜谱</button></div>}</>:<RecipeGraph focus={focus} setFocus={setFocus} available={available} openRecipe={setDetail}/>}
