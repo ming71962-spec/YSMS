@@ -1,16 +1,18 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { ReactFlow, Background, Controls, type Node, type Edge } from '@xyflow/react';
-import { CookingPot, Search, SlidersHorizontal, Plus, X, Check, Heart, LayoutGrid, Network, ShoppingBasket, BookOpen, Leaf, ChefHat, ExternalLink, RotateCcw, Download, Utensils, ChevronDown } from 'lucide-react';
+import { CookingPot, Search, SlidersHorizontal, Plus, X, Check, Heart, LayoutGrid, Network, ShoppingBasket, BookOpen, Leaf, ChefHat, ExternalLink, RotateCcw, Utensils, ChevronDown } from 'lucide-react';
 import { ingredients, recipes, ingredientMap, recipeMap } from './catalog';
 import { useKitchen, storageUnavailable } from './store';
-import { matchRecipe, rankRecipes, searchRecipe, shoppingList, normalize } from './engine';
+import { matchRecipe, rankRecipes, searchRecipe, normalize } from './engine';
 import type { Recipe, Match } from './types';
 import '@xyflow/react/dist/style.css';
 import './style.css';
 import './ink.css';
 import './kitchen-layout.css';
 import { FoodArt } from './FoodArt';
+import { buildMealPlan, formatMealPlan } from './meal-plan';
+import { MealPlanner } from './MealPlanner';
 import visuals from './data/visuals.json';
 
 type Filter = 'all' | 'ready' | 'almost' | 'favorites';
@@ -73,10 +75,11 @@ function SourceSections({recipe}: {recipe:Recipe}) {
   return <div className="source-sections">{sections.filter(s=>clean(s.body)).map(s=><section key={s.title}><h3>{s.title==='计算'?'原谱份量与用量':s.title==='操作'?'跟着原谱做':'原谱补充说明'}</h3><div className="source-text">{clean(s.body)}</div></section>)}</div>;
 }
 
-function RecipeDetail({recipe,available,close,explore}: {recipe:Recipe;available:Set<string>;close:()=>void;explore:()=>void}) {
+function RecipeDetail({recipe,available,close,explore,returnToMeal}: {recipe:Recipe;available:Set<string>;close:()=>void;explore:()=>void;returnToMeal?:boolean}) {
   const {meal,toggle} = useKitchen();
   const m = matchRecipe(recipe,available);
   return <Dialog title={recipe.name} close={close} wide>
+    {returnToMeal&&<button className="text-button" onClick={close}>返回今日一桌</button>}
     <div className="detail-intro"><span className="detail-emoji"><FoodArt id={recipe.id} type="recipe"/></span><div><span className="eyebrow">{recipe.category} · HOWTOCOOK</span><p>{recipe.description}</p></div></div>
     <div className="detail-actions"><button className="primary-button" onClick={()=>toggle('meal',recipe.id)}>{meal.includes(recipe.id)?<Check size={17}/>:<Plus size={17}/>} {meal.includes(recipe.id)?'已加入今日一桌':'加入今日一桌'}</button><button className="secondary-button" onClick={explore}><Network size={17}/>探索关系图</button></div>
     <section className="detail-materials"><h3>准备材料 <small>{m.missing.length?`缺 ${m.missing.length} 种必需材料`:'必需材料种类齐全'}</small></h3><p className="muted">核对材料种类；实际数量、工具与用量请查看下方原谱。</p><div className="material-list">{recipe.ingredients.map(i=>{const ing=ingredientMap.get(i.id)!;const owned=available.has(i.id);return <div key={i.id} className={owned?'owned':''}><span><FoodArt id={ing.id} decorative/> {ing.name}</span><span>{i.tier==='L3'?'可选 · ':''}{owned?<><Check size={14}/>家里有</>:i.tier==='L1'?'需准备':'未选择'}</span></div>;})}</div></section>
@@ -95,6 +98,7 @@ export default function App() {
   const [warning,setWarning]=useState(storageUnavailable); const [category,setCategory]=useState('全部菜品');
   const [notice,setNotice]=useState('');
   const [pantryOpen,setPantryOpen]=useState(false);
+  const [detailFromMeal,setDetailFromMeal]=useState(false);
   const resultsRef=useRef<HTMLDivElement>(null);
   function finishPicking() {
     setPantryOpen(false);
@@ -111,13 +115,12 @@ export default function App() {
   const common=new Set(['tomato','egg','potato','broccoli','cucumber','onion','silken-tofu','wings','pork-belly','rice','seaweed','pumpkin']);
   const shownIngredients=ingredients.filter(i=>(normalize(i.name+' '+i.aliases.join(' ')).includes(normalize(ingredientQuery)))&&(ingredientQuery||group==='全部'||(group==='常用'?common.has(i.id):i.group===group)));
   const readyCount=ranked.filter(r=>r.status==='ready').length;
-  const shopping=shoppingList(meal.map(id=>recipeMap.get(id)!).filter(Boolean),available);
+  const mealPlan=buildMealPlan(meal.map(id=>recipeMap.get(id)!).filter(Boolean),available);
   function exportList() {
-    const dishes=meal.map(id=>recipeMap.get(id)!).filter(Boolean);
-    const text=['今日一桌',...dishes.map(r=>'· '+r.name),'','待准备的必需食材（种类清单，数量请按原谱核对）',...(shopping.length?shopping.map(i=>`□ ${ingredientMap.get(i.id)!.name}（${i.dishes.join('、')}）`):['必需材料种类已齐全。']), '', '菜谱来源',...dishes.map(r=>r.name+' '+r.source.url)].join('\n');
-    const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='今日一桌_备料清单.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);setNotice('备料清单已导出');
+    const text=formatMealPlan(mealPlan,ingredientMap);
+    const url=URL.createObjectURL(new Blob(['\ufeff'+text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='今日一桌_备料清单.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);setNotice('备料清单已导出');
   }
-  function explore(id:string) {setFocus({type:'recipe',id});setView('graph');setDetail(null);}
+  function explore(id:string) {setDetailFromMeal(false);setFocus({type:'recipe',id});setView('graph');setDetail(null);}
   return <>
     <header className="topbar"><a className="brand" href="#" onClick={e=>{e.preventDefault();setQuery('');setFilter('all');setView('cards');}}><span className="brand-mark"><CookingPot size={24}/></span><span>食材工坊<small>人间烟火 · 纸上寻味</small></span></a><nav aria-label="主导航"><button aria-pressed={view==='cards'} className={view==='cards'?'active':''} onClick={()=>setView('cards')}><Utensils size={17}/>发现菜谱</button><button aria-pressed={view==='graph'} className={view==='graph'?'active':''} onClick={()=>setView('graph')}><Network size={17}/>食材关系图</button></nav><button className="meal-button" onClick={()=>setModal('meal')}><ShoppingBasket size={18}/><span>今日一桌</span><b>{meal.length}</b></button></header>
     {warning&&<div className="storage-warning">浏览器存储不可用或旧记录损坏，本次操作仍可使用，但可能无法保存。</div>}
@@ -139,9 +142,9 @@ export default function App() {
         <footer className="page-footer"><span>认真做一顿平常饭。</span><button className="text-button" onClick={()=>setModal('about')}>关于与开源来源 <ExternalLink size={13}/></button></footer>
       </main>
     </div>
-    {detail&&recipeMap.has(detail)&&<RecipeDetail recipe={recipeMap.get(detail)!} available={available} close={()=>setDetail(null)} explore={()=>explore(detail)}/>}
+    {detail&&recipeMap.has(detail)&&<RecipeDetail recipe={recipeMap.get(detail)!} available={available} close={()=>{setDetail(null);if(detailFromMeal){setDetailFromMeal(false);setModal('meal');}}} returnToMeal={detailFromMeal} explore={()=>explore(detail)}/>}
     {modal==='pantry'&&<Dialog title="家里常备的调料" close={()=>setModal(null)}><p className="muted">勾选后会自动用于所有菜谱的匹配。没有的调料可以随时取消。</p><div className="pantry-checks">{ingredients.filter(i=>i.group==='调料').map(i=><label key={i.id}><input type="checkbox" checked={pantry.includes(i.id)} onChange={()=>toggle('pantry',i.id)}/><span>{i.name}</span></label>)}</div><div className="dialog-bottom"><span>已设 {pantry.length} 种常备材料</span><button className="primary-button" onClick={()=>setModal(null)}>完成</button></div></Dialog>}
-    {modal==='meal'&&<Dialog title="今日一桌" close={()=>setModal(null)}><p className="muted">把想做的菜放在一起，合并查看缺少的材料。</p>{meal.length?<><div className="meal-list">{meal.map(id=>{const r=recipeMap.get(id)!;return <div key={id}><FoodArt id={r.id} type="recipe" decorative/><button className="text-button" onClick={()=>{setModal(null);setDetail(id);}}>{r.name}</button><button className="icon-button" aria-label={`移出${r.name}`} onClick={()=>toggle('meal',id)}><X size={18}/></button></div>;})}</div><h3>还需准备 <small>{shopping.length} 种必需材料</small></h3><p className="muted">先合并种类，实际数量请逐道核对原谱；可选材料见各菜详情。</p><div className="shopping-list">{shopping.map(i=><div key={i.id}><span className="shopping-box"/><div><strong>{ingredientMap.get(i.id)!.name}</strong><small>{i.dishes.join('、')}</small></div></div>)}</div>{!shopping.length&&<p className="success-note"><Check size={17}/>必需材料种类已经齐全。</p>}<div className="dialog-bottom"><button className="text-button" onClick={()=>clear('meal')}>清空这一桌</button><button className="primary-button" onClick={exportList}><Download size={16}/>导出备料清单</button></div></>:<div className="empty-state"><ShoppingBasket size={40}/><h3>这一桌，等你来安排</h3><p>从菜谱卡片点击「今日一桌」，开始搭配。</p><button className="primary-button" onClick={()=>setModal(null)}>去选菜</button></div>}</Dialog>}
+    {modal==='meal'&&<Dialog title="今日一桌" close={()=>setModal(null)} wide><MealPlanner plan={mealPlan} openRecipe={id=>{setModal(null);setDetailFromMeal(true);setDetail(id);}} removeRecipe={id=>toggle('meal',id)} markOwned={id=>{if(!available.has(id))toggle('selected',id);}} clear={()=>clear('meal')} exportList={exportList} close={()=>setModal(null)}/></Dialog>}
     {modal==='about'&&<Dialog title="关于食材工坊" close={()=>setModal(null)}><div className="about-content"><p>一个从手边食材出发的做饭规划工具。当前版本提供 {recipes.length} 道中文菜谱，支持按食材找菜、查看原谱、关系探索、收藏和备料清单。</p><h3>开源的基础</h3><p><a href="https://github.com/Anduin2017/HowToCook" target="_blank" rel="noreferrer">HowToCook</a> 提供菜谱原文（Unlicense）。原始份量与做法保留，材料匹配标签由本项目编辑。</p><p>参考 <a href="https://github.com/YunYouJun/cook" target="_blank" rel="noreferrer">YunYouJun/cook</a> 的按食材选菜流程，以及 <a href="https://github.com/tfrere/recipe-display" target="_blank" rel="noreferrer">recipe-display</a> 的关系图与库存匹配设计。未复制这两个项目的业务代码。</p><p>食材彩图直接采用 <a href="https://github.com/cosmintrica/culinary-assets" target="_blank" rel="noreferrer">Culinary Assets</a>（CC0）；作者说明这是经其检查的 AI 生成素材。没有准确彩图的食材显示名称，避免用近似图替代。</p><p>有对应原图的菜品使用 HowToCook 照片，其余标为“主料示意”。鸡翅中使用翅中熟制参考图，未再使用鸡腿图。</p><p>页面山水装饰采用 <a href="https://github.com/LingDong-/shan-shui-inf" target="_blank" rel="noreferrer">shan-shui-inf</a>（Lingdong Huang，MIT）现成画面。页面为水墨灰度，食物保留原有颜色。</p><p>界面基于 React、Zustand、React Flow 与 Lucide。相关许可保留于项目源码及 <a href="/third-party-notices.txt" target="_blank" rel="noreferrer">第三方许可文件</a>。</p><h3>接下来一起打磨</h3><p>当前核对材料种类，不管理库存克重；份量保留原谱，尚未启用人数换算、自动平替与地图菜系筛选。</p><p>收藏、食材和调料只保存在当前浏览器，不会自动同步到其他设备。</p></div></Dialog>}
     {notice&&<div className="toast" role="status"><Check size={17}/>{notice}</div>}
   </>;
