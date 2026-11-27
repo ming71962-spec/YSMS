@@ -4,90 +4,102 @@
     "src": "/art/tomato.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/tomato.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:potato": {
     "label": "土豆",
     "src": "/art/potato.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/potato.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:broccoli": {
     "label": "西兰花",
     "src": "/art/broccoli.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/broccoli.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:cucumber": {
     "label": "黄瓜",
     "src": "/art/cucumber.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/cucumber.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:onion": {
     "label": "洋葱",
     "src": "/art/onion.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/onion.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:cabbage": {
     "label": "包菜",
     "src": "/art/cabbage.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/cabbage.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:pumpkin": {
     "label": "南瓜",
     "src": "/art/pumpkin.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/pumpkin.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:garlic": {
     "label": "大蒜",
     "src": "/art/garlic.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/garlic.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:ginger": {
     "label": "生姜",
     "src": "/art/ginger.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/ginger.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:scallion": {
     "label": "小葱",
     "src": "/art/scallion.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/spring_onion.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:green-pepper": {
     "label": "青椒",
-    "src": "/art/green-pepper.webp",
-    "kind": "ingredient-illustration",
-    "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "kind": "text",
+    "short": "青椒",
+    "note": "原图实为红甜椒（bell_pepper，已归位至红椒）；当前固定来源无青椒彩图，按约定显示名称，待 B2 补齐准确青椒彩图。"
   },
   "ingredient:red-pepper": {
     "label": "红椒",
-    "kind": "text",
-    "short": "红椒",
-    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+    "src": "/art/red-pepper.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "sourcePath": "assets/webp/bell_pepper.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材（红甜椒）；原误挂于青椒，B1 核对后已归位。"
   },
   "ingredient:chili": {
     "label": "小米辣",
     "src": "/art/chili.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/fresh_chili.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材（鲜红辣椒），图物核对准确。"
   },
   "ingredient:garlic-sprout": {
     "label": "蒜苗",
@@ -100,28 +112,32 @@
     "src": "/art/carrot.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/carrot.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:coriander": {
     "label": "香菜",
     "src": "/art/coriander.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/cilantro.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:egg": {
     "label": "鸡蛋",
     "src": "/art/egg.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/eggs.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材，图物核对准确。"
   },
   "ingredient:silken-tofu": {
     "label": "内酯豆腐",
     "src": "/art/silken-tofu.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/tofu.webp",
+    "note": "CC0 彩色素材；源图偏老豆腐带孔质感（Firm tofu），仅作豆腐通用示意，烹调请按原谱选用内酯/嫩豆腐，待 B2 替换更贴合的嫩豆腐图。"
   },
   "ingredient:century-egg": {
     "label": "皮蛋",
@@ -139,7 +155,9 @@
     "label": "鸡翅中 · 熟制参考",
     "kind": "ingredient-photo",
     "src": "/art/ingredient-wings.webp",
-    "note": "熟制翅中形态参考，非生鲜照片。"
+    "source": "Anduin2017/HowToCook",
+    "sourcePath": "dishes/semi-finished/空气炸锅鸡翅中/鸡翅中_0.jpg",
+    "note": "空气炸锅鸡翅中熟制形态参考，非生鲜照片，亦非可乐鸡翅原谱成品照。"
   },
   "ingredient:pork-belly": {
     "label": "五花肉",
@@ -158,7 +176,8 @@
     "src": "/art/shrimp.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/shrimp.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材（去壳带尾生虾仁），图物核对准确。"
   },
   "ingredient:cooked-meat": {
     "label": "熟肉",
@@ -171,7 +190,8 @@
     "src": "/art/rice.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/rice.webp",
+    "note": "CC0 彩色素材；源图为碗装生大米（Rice），非熟制冷饭，仅作米类示意，待 B2 替换熟米饭图。"
   },
   "ingredient:seaweed": {
     "label": "干紫菜",
@@ -184,42 +204,48 @@
     "src": "/art/oil.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/vegetable_oil.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材（植物油），图物核对准确。"
   },
   "ingredient:salt": {
     "label": "盐",
     "src": "/art/salt.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/salt.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材（食盐），图物核对准确。"
   },
   "ingredient:sugar": {
     "label": "白糖",
     "src": "/art/sugar.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/sugar_pile.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材（白砂糖）；B1 由原方糖图替换为更贴合中餐用糖形态的砂糖图。"
   },
   "ingredient:soy": {
     "label": "生抽 / 酱油",
     "src": "/art/soy.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/soy_sauce.webp",
+    "note": "CC0 彩色素材；通用酱油瓶示意，当前与老抽共用同图，具体种类以文字为准。"
   },
   "ingredient:dark-soy": {
     "label": "老抽",
     "src": "/art/dark-soy.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/soy_sauce.webp",
+    "note": "CC0 彩色素材；通用酱油瓶示意，当前与生抽共用同图，具体种类以文字为准。"
   },
   "ingredient:vinegar": {
     "label": "醋",
     "src": "/art/vinegar.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/vinegar.webp",
+    "note": "CC0 彩色素材；源图为浅色醋瓶示意，与中式陈醋/镇江香醋色泽有别，具体种类以文字为准。"
   },
   "ingredient:oyster": {
     "label": "蚝油",
@@ -232,7 +258,8 @@
     "src": "/art/sesame-oil.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/sesame_oil.webp",
+    "note": "AI 生成并经原作者审阅整理的 CC0 彩色素材（芝麻香油），图物核对准确。"
   },
   "ingredient:cooking-wine": {
     "label": "料酒",
@@ -257,7 +284,8 @@
     "src": "/art/pepper.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/black_pepper.webp",
+    "note": "CC0 彩色素材；源图为黑胡椒粒（Black peppercorns），非研磨胡椒粉，仅作胡椒类示意，待 B2 替换粉状图。"
   },
   "ingredient:sichuan-pepper": {
     "label": "花椒",
@@ -282,7 +310,8 @@
     "src": "/art/peanuts.webp",
     "kind": "ingredient-illustration",
     "source": "cosmintrica/culinary-assets",
-    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+    "sourcePath": "assets/webp/peanuts_pile.webp",
+    "note": "CC0 彩色素材；源图为完整花生仁（Peanut pile），非碾碎花生碎，仅作原料示意，待 B2 评估替换。"
   },
   "ingredient:chicken-powder": {
     "label": "鸡精",
@@ -354,7 +383,7 @@
     "ingredients": [
       "potato",
       "garlic",
-      "green-pepper"
+      "red-pepper"
     ]
   },
   "recipe:wings": {
@@ -402,6 +431,7 @@
     "label": "山水淡墨 · Lingdong Huang",
     "src": "/art/ink-landscape.webp",
     "kind": "landscape",
-    "source": "LingDong-/shan-shui-inf"
+    "source": "LingDong-/shan-shui-inf",
+    "sourcePath": "screen001.jpg"
   }
 }
