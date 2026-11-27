@@ -1,0 +1,28 @@
+{
+  "name": "kitchen-workshop",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "test": "node --experimental-strip-types --test tests/engine.test.ts",
+    "install:ci": "node scripts/install.mjs"
+  },
+  "dependencies": {
+    "@xyflow/react": "12.4.4",
+    "lucide-react": "0.468.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zustand": "5.0.5"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.20",
+    "@types/react-dom": "18.3.6",
+    "@vitejs/plugin-react": "4.4.1",
+    "typescript": "5.8.3",
+    "vite": "6.3.5"
+  }
+}

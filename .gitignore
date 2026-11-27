@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.sites-runtime/
+.env
+.env.*
+!.env.example
+*.log
+test-results/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.zip
+*.tar.gz

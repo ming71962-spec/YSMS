@@ -1,0 +1,431 @@
+[
+  {
+    "id": "tomato",
+    "name": "西红柿",
+    "aliases": [
+      "番茄"
+    ],
+    "group": "蔬菜",
+    "emoji": "🍅",
+    "pantryDefault": false
+  },
+  {
+    "id": "potato",
+    "name": "土豆",
+    "aliases": [
+      "马铃薯"
+    ],
+    "group": "蔬菜",
+    "emoji": "🥔",
+    "pantryDefault": false
+  },
+  {
+    "id": "broccoli",
+    "name": "西兰花",
+    "aliases": [
+      "青花菜"
+    ],
+    "group": "蔬菜",
+    "emoji": "🥦",
+    "pantryDefault": false
+  },
+  {
+    "id": "cucumber",
+    "name": "黄瓜",
+    "aliases": [],
+    "group": "蔬菜",
+    "emoji": "🥒",
+    "pantryDefault": false
+  },
+  {
+    "id": "onion",
+    "name": "洋葱",
+    "aliases": [],
+    "group": "蔬菜",
+    "emoji": "🧅",
+    "pantryDefault": false
+  },
+  {
+    "id": "cabbage",
+    "name": "包菜",
+    "aliases": [
+      "卷心菜",
+      "甘蓝"
+    ],
+    "group": "蔬菜",
+    "emoji": "🥬",
+    "pantryDefault": false
+  },
+  {
+    "id": "pumpkin",
+    "name": "南瓜",
+    "aliases": [],
+    "group": "蔬菜",
+    "emoji": "🎃",
+    "pantryDefault": false
+  },
+  {
+    "id": "garlic",
+    "name": "大蒜",
+    "aliases": [
+      "蒜",
+      "蒜头"
+    ],
+    "group": "蔬菜",
+    "emoji": "🧄",
+    "pantryDefault": false
+  },
+  {
+    "id": "ginger",
+    "name": "生姜",
+    "aliases": [
+      "姜"
+    ],
+    "group": "蔬菜",
+    "emoji": "🫚",
+    "pantryDefault": false
+  },
+  {
+    "id": "scallion",
+    "name": "小葱",
+    "aliases": [
+      "葱",
+      "香葱",
+      "葱花"
+    ],
+    "group": "蔬菜",
+    "emoji": "🌱",
+    "pantryDefault": false
+  },
+  {
+    "id": "green-pepper",
+    "name": "青椒",
+    "aliases": [],
+    "group": "蔬菜",
+    "emoji": "🫑",
+    "pantryDefault": false
+  },
+  {
+    "id": "red-pepper",
+    "name": "红椒",
+    "aliases": [],
+    "group": "蔬菜",
+    "emoji": "🌶️",
+    "pantryDefault": false
+  },
+  {
+    "id": "chili",
+    "name": "小米辣",
+    "aliases": [
+      "小米椒"
+    ],
+    "group": "蔬菜",
+    "emoji": "🌶️",
+    "pantryDefault": false
+  },
+  {
+    "id": "garlic-sprout",
+    "name": "蒜苗",
+    "aliases": [],
+    "group": "蔬菜",
+    "emoji": "🌱",
+    "pantryDefault": false
+  },
+  {
+    "id": "carrot",
+    "name": "胡萝卜",
+    "aliases": [],
+    "group": "蔬菜",
+    "emoji": "🥕",
+    "pantryDefault": false
+  },
+  {
+    "id": "coriander",
+    "name": "香菜",
+    "aliases": [],
+    "group": "蔬菜",
+    "emoji": "🌿",
+    "pantryDefault": false
+  },
+  {
+    "id": "egg",
+    "name": "鸡蛋",
+    "aliases": [
+      "蛋"
+    ],
+    "group": "蛋奶豆制品",
+    "emoji": "🥚",
+    "pantryDefault": false
+  },
+  {
+    "id": "silken-tofu",
+    "name": "内酯豆腐",
+    "aliases": [
+      "内脂豆腐",
+      "嫩豆腐"
+    ],
+    "group": "蛋奶豆制品",
+    "emoji": "◻️",
+    "pantryDefault": false
+  },
+  {
+    "id": "century-egg",
+    "name": "皮蛋",
+    "aliases": [
+      "松花蛋"
+    ],
+    "group": "蛋奶豆制品",
+    "emoji": "🥚",
+    "pantryDefault": false
+  },
+  {
+    "id": "salted-egg",
+    "name": "咸鸭蛋",
+    "aliases": [],
+    "group": "蛋奶豆制品",
+    "emoji": "🥚",
+    "pantryDefault": false
+  },
+  {
+    "id": "wings",
+    "name": "鸡翅中",
+    "aliases": [
+      "鸡翅"
+    ],
+    "group": "肉类",
+    "emoji": "🍗",
+    "pantryDefault": false
+  },
+  {
+    "id": "pork-belly",
+    "name": "五花肉",
+    "aliases": [],
+    "group": "肉类",
+    "emoji": "🥩",
+    "pantryDefault": false
+  },
+  {
+    "id": "ham",
+    "name": "火腿肠",
+    "aliases": [
+      "火腿"
+    ],
+    "group": "肉类",
+    "emoji": "🥓",
+    "pantryDefault": false
+  },
+  {
+    "id": "shrimp",
+    "name": "虾仁",
+    "aliases": [],
+    "group": "肉类",
+    "emoji": "🦐",
+    "pantryDefault": false
+  },
+  {
+    "id": "cooked-meat",
+    "name": "熟肉",
+    "aliases": [
+      "午餐肉",
+      "腊肠",
+      "卤肉",
+      "灯影牛肉丝"
+    ],
+    "group": "肉类",
+    "emoji": "🥩",
+    "pantryDefault": false
+  },
+  {
+    "id": "rice",
+    "name": "冷饭",
+    "aliases": [
+      "米饭",
+      "剩饭"
+    ],
+    "group": "主食",
+    "emoji": "🍚",
+    "pantryDefault": false
+  },
+  {
+    "id": "seaweed",
+    "name": "干紫菜",
+    "aliases": [
+      "紫菜"
+    ],
+    "group": "主食",
+    "emoji": "🌊",
+    "pantryDefault": false
+  },
+  {
+    "id": "oil",
+    "name": "食用油",
+    "aliases": [
+      "油"
+    ],
+    "group": "调料",
+    "emoji": "🫙",
+    "pantryDefault": true
+  },
+  {
+    "id": "salt",
+    "name": "盐",
+    "aliases": [
+      "食盐",
+      "食用盐"
+    ],
+    "group": "调料",
+    "emoji": "🧂",
+    "pantryDefault": true
+  },
+  {
+    "id": "sugar",
+    "name": "白糖",
+    "aliases": [
+      "糖",
+      "白砂糖"
+    ],
+    "group": "调料",
+    "emoji": "🧂",
+    "pantryDefault": false
+  },
+  {
+    "id": "soy",
+    "name": "生抽 / 酱油",
+    "aliases": [
+      "生抽",
+      "酱油",
+      "味极鲜"
+    ],
+    "group": "调料",
+    "emoji": "🫙",
+    "pantryDefault": false
+  },
+  {
+    "id": "dark-soy",
+    "name": "老抽",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🫙",
+    "pantryDefault": false
+  },
+  {
+    "id": "vinegar",
+    "name": "醋",
+    "aliases": [
+      "陈醋",
+      "香醋",
+      "镇江香醋"
+    ],
+    "group": "调料",
+    "emoji": "🫙",
+    "pantryDefault": false
+  },
+  {
+    "id": "oyster",
+    "name": "蚝油",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🫙",
+    "pantryDefault": false
+  },
+  {
+    "id": "sesame-oil",
+    "name": "香油",
+    "aliases": [
+      "芝麻油"
+    ],
+    "group": "调料",
+    "emoji": "🫙",
+    "pantryDefault": false
+  },
+  {
+    "id": "cooking-wine",
+    "name": "料酒",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🫙",
+    "pantryDefault": false
+  },
+  {
+    "id": "cola",
+    "name": "可乐",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🥤",
+    "pantryDefault": false
+  },
+  {
+    "id": "chili-dried",
+    "name": "干辣椒",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🌶️",
+    "pantryDefault": false
+  },
+  {
+    "id": "pepper",
+    "name": "胡椒粉",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🧂",
+    "pantryDefault": false
+  },
+  {
+    "id": "sichuan-pepper",
+    "name": "花椒",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🌿",
+    "pantryDefault": false
+  },
+  {
+    "id": "chili-sauce",
+    "name": "蒜蓉辣酱",
+    "aliases": [
+      "香辣酱"
+    ],
+    "group": "调料",
+    "emoji": "🌶️",
+    "pantryDefault": false
+  },
+  {
+    "id": "chili-oil",
+    "name": "辣椒油",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🫙",
+    "pantryDefault": false
+  },
+  {
+    "id": "peanuts",
+    "name": "花生碎",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🥜",
+    "pantryDefault": false
+  },
+  {
+    "id": "chicken-powder",
+    "name": "鸡精",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🧂",
+    "pantryDefault": false
+  },
+  {
+    "id": "starch",
+    "name": "淀粉",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🧂",
+    "pantryDefault": false
+  },
+  {
+    "id": "dried-shrimp",
+    "name": "虾皮",
+    "aliases": [],
+    "group": "调料",
+    "emoji": "🦐",
+    "pantryDefault": false
+  }
+]

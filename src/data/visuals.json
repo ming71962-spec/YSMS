@@ -1,0 +1,407 @@
+{
+  "ingredient:tomato": {
+    "label": "西红柿",
+    "src": "/art/tomato.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:potato": {
+    "label": "土豆",
+    "src": "/art/potato.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:broccoli": {
+    "label": "西兰花",
+    "src": "/art/broccoli.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:cucumber": {
+    "label": "黄瓜",
+    "src": "/art/cucumber.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:onion": {
+    "label": "洋葱",
+    "src": "/art/onion.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:cabbage": {
+    "label": "包菜",
+    "src": "/art/cabbage.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:pumpkin": {
+    "label": "南瓜",
+    "src": "/art/pumpkin.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:garlic": {
+    "label": "大蒜",
+    "src": "/art/garlic.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:ginger": {
+    "label": "生姜",
+    "src": "/art/ginger.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:scallion": {
+    "label": "小葱",
+    "src": "/art/scallion.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:green-pepper": {
+    "label": "青椒",
+    "src": "/art/green-pepper.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:red-pepper": {
+    "label": "红椒",
+    "kind": "text",
+    "short": "红椒",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:chili": {
+    "label": "小米辣",
+    "src": "/art/chili.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:garlic-sprout": {
+    "label": "蒜苗",
+    "kind": "text",
+    "short": "蒜苗",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:carrot": {
+    "label": "胡萝卜",
+    "src": "/art/carrot.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:coriander": {
+    "label": "香菜",
+    "src": "/art/coriander.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:egg": {
+    "label": "鸡蛋",
+    "src": "/art/egg.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:silken-tofu": {
+    "label": "内酯豆腐",
+    "src": "/art/silken-tofu.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:century-egg": {
+    "label": "皮蛋",
+    "kind": "text",
+    "short": "皮蛋",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:salted-egg": {
+    "label": "咸鸭蛋",
+    "kind": "text",
+    "short": "咸鸭蛋",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:wings": {
+    "label": "鸡翅中 · 熟制参考",
+    "kind": "ingredient-photo",
+    "src": "/art/ingredient-wings.webp",
+    "note": "熟制翅中形态参考，非生鲜照片。"
+  },
+  "ingredient:pork-belly": {
+    "label": "五花肉",
+    "kind": "text",
+    "short": "五花肉",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:ham": {
+    "label": "火腿肠",
+    "kind": "text",
+    "short": "火腿肠",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:shrimp": {
+    "label": "虾仁",
+    "src": "/art/shrimp.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:cooked-meat": {
+    "label": "熟肉",
+    "kind": "text",
+    "short": "熟肉",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:rice": {
+    "label": "冷饭",
+    "src": "/art/rice.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:seaweed": {
+    "label": "干紫菜",
+    "kind": "text",
+    "short": "干紫菜",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:oil": {
+    "label": "食用油",
+    "src": "/art/oil.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:salt": {
+    "label": "盐",
+    "src": "/art/salt.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:sugar": {
+    "label": "白糖",
+    "src": "/art/sugar.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:soy": {
+    "label": "生抽 / 酱油",
+    "src": "/art/soy.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:dark-soy": {
+    "label": "老抽",
+    "src": "/art/dark-soy.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:vinegar": {
+    "label": "醋",
+    "src": "/art/vinegar.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:oyster": {
+    "label": "蚝油",
+    "kind": "text",
+    "short": "蚝油",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:sesame-oil": {
+    "label": "香油",
+    "src": "/art/sesame-oil.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:cooking-wine": {
+    "label": "料酒",
+    "kind": "text",
+    "short": "料酒",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:cola": {
+    "label": "可乐",
+    "kind": "text",
+    "short": "可乐",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:chili-dried": {
+    "label": "干辣椒",
+    "kind": "text",
+    "short": "干辣椒",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:pepper": {
+    "label": "胡椒粉",
+    "src": "/art/pepper.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:sichuan-pepper": {
+    "label": "花椒",
+    "kind": "text",
+    "short": "花椒",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:chili-sauce": {
+    "label": "蒜蓉辣酱",
+    "kind": "text",
+    "short": "蒜蓉辣酱",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:chili-oil": {
+    "label": "辣椒油",
+    "kind": "text",
+    "short": "辣椒油",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:peanuts": {
+    "label": "花生碎",
+    "src": "/art/peanuts.webp",
+    "kind": "ingredient-illustration",
+    "source": "cosmintrica/culinary-assets",
+    "note": "原始彩色插画；酱油包装为通用示意，具体种类以文字为准。"
+  },
+  "ingredient:chicken-powder": {
+    "label": "鸡精",
+    "kind": "text",
+    "short": "鸡精",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:starch": {
+    "label": "淀粉",
+    "kind": "text",
+    "short": "淀粉",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "ingredient:dried-shrimp": {
+    "label": "虾皮",
+    "kind": "text",
+    "short": "虾皮",
+    "note": "尚无已核对的准确彩图，显示名称，不用近似食材图替代。"
+  },
+  "recipe:tomato-eggs": {
+    "label": "西红柿炒鸡蛋 · 主料示意",
+    "kind": "ingredient-collage",
+    "ingredients": [
+      "tomato",
+      "egg"
+    ]
+  },
+  "recipe:onion-eggs": {
+    "label": "洋葱炒鸡蛋 · 原谱照片",
+    "kind": "recipe-photo",
+    "src": "/art/recipe-onion-eggs.webp",
+    "source": "Anduin2017/HowToCook",
+    "sourcePath": "dishes/vegetable_dish/洋葱炒鸡蛋/1.jpeg"
+  },
+  "recipe:broccoli": {
+    "label": "蒜蓉西兰花 · 主料示意",
+    "kind": "ingredient-collage",
+    "ingredients": [
+      "broccoli",
+      "garlic"
+    ]
+  },
+  "recipe:cucumber": {
+    "label": "凉拌黄瓜 · 主料示意",
+    "kind": "ingredient-collage",
+    "ingredients": [
+      "cucumber",
+      "garlic"
+    ]
+  },
+  "recipe:century-tofu": {
+    "label": "皮蛋豆腐 · 主料示意",
+    "kind": "ingredient-collage",
+    "ingredients": [
+      "century-egg",
+      "silken-tofu"
+    ]
+  },
+  "recipe:pumpkin": {
+    "label": "清蒸南瓜 · 主料示意",
+    "kind": "ingredient-collage",
+    "ingredients": [
+      "pumpkin"
+    ]
+  },
+  "recipe:potato": {
+    "label": "酸辣土豆丝 · 主料示意",
+    "kind": "ingredient-collage",
+    "ingredients": [
+      "potato",
+      "garlic",
+      "green-pepper"
+    ]
+  },
+  "recipe:wings": {
+    "label": "可乐鸡翅 · 主料示意",
+    "kind": "ingredient-collage",
+    "ingredients": [
+      "wings",
+      "ginger",
+      "scallion"
+    ]
+  },
+  "recipe:cabbage": {
+    "label": "手撕包菜（五花肉版） · 原谱照片",
+    "kind": "recipe-photo",
+    "src": "/art/recipe-cabbage.webp",
+    "source": "Anduin2017/HowToCook",
+    "sourcePath": "dishes/vegetable_dish/手撕包菜/4.jpeg"
+  },
+  "recipe:mapo": {
+    "label": "麻婆豆腐（咸鸭蛋版） · 原谱照片",
+    "kind": "recipe-photo",
+    "src": "/art/recipe-mapo.webp",
+    "source": "Anduin2017/HowToCook",
+    "sourcePath": "dishes/meat_dish/麻婆豆腐/1.jpeg"
+  },
+  "recipe:fried-rice": {
+    "label": "蛋炒饭（火腿版） · 主料示意",
+    "kind": "ingredient-collage",
+    "ingredients": [
+      "rice",
+      "egg",
+      "ham"
+    ]
+  },
+  "recipe:seaweed-soup": {
+    "label": "紫菜蛋花汤 · 主料示意",
+    "kind": "ingredient-collage",
+    "ingredients": [
+      "egg",
+      "seaweed",
+      "scallion"
+    ]
+  },
+  "scene:hero": {
+    "label": "山水淡墨 · Lingdong Huang",
+    "src": "/art/ink-landscape.webp",
+    "kind": "landscape",
+    "source": "LingDong-/shan-shui-inf"
+  }
+}
